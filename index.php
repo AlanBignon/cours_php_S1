@@ -103,6 +103,11 @@ var_dump($user);
 //    var_dump("$firstname => $bob");
 //}
 
+/*
+ * L'objectif est de compléter le tableau $incompletUsers (ajouter les lastnames)
+ * avec le tableau $lastnames
+ *
+ */
 
 $users = array(
     array(
@@ -114,17 +119,6 @@ $users = array(
         "mail" => "john@gmail.com",
         ),
 );
-var_dump($users);
-
-$janne = array(
-    "firstname" => "janne",
-    "mail" => "janne@gmail.com",
-    );
-
-//array_push($users, $janne);
-$users[] = $janne;
-
-var_dump($users);
 
 $lastname = array("Dit l'ane", "Doe", "Die");
 
@@ -143,4 +137,33 @@ $users = array(
     ),
 );
 
+foreach ($users as $index => $user){
+    $users[$index]["lastname"] = $lastname[$index];
+    var_dump($users);
+}
+
+//for ($k =0; $k < 3; $k++){
+ //   foreach ($users[$k]){
+  //      $users["lastname"] = $lastname[$k];
+  //  }
+//}
+//var_dump($users);
+
+//$incompletUsers = array(
+//    array(
+//        "firstname" => "bob",
+//        "lastname" => "Dit l'âne",
+//        "email" => "bob@domain.tld"
+//    ),
+//    array(
+//        "firstname" => "john",
+//        "lastname" => "doe",
+//        "email" => "john@domain.tld"
+//    ),
+//    array(
+//        "firstname" => "jane",
+//        "lastname" => "die",
+//        "email" => "jane@domain.tld"
+//    )
+//);
 
