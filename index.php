@@ -79,24 +79,24 @@
 // compter le nombre de valeur de ce tableau
 //puis l'afficher dans votre terminal
 
-$list = array(1, 2, 300, 4556, 4566, 8745);
-var_dump(count($list));
+//$list = array(1, 2, 300, 4556, 4566, 8745);
+//var_dump(count($list));
 
 
-$count = 0;
-for ($i = 0; $i < 6; $i ++ ){
-    $count ++;
-}
-var_dump($count);
+//$count = 0;
+//for ($i = 0; $i < 6; $i ++ ){
+//    $count ++;
+//}
+//var_dump($count);
 
 
-$user = array(
-    "firstname"=> "bob",
-    "lastname" => "marley",
-    "age" => "30",
-    "key" => "valeur",
-    );
-var_dump($user);
+//$user = array(
+//    "firstname"=> "bob",
+//    "lastname" => "marley",
+//    "age" => "30",
+//    "key" => "valeur",
+//    );
+//var_dump($user);
 
 //foreach ($user as $firstname => $bob) {
 //    var_dump($user[$firstname]);
@@ -109,38 +109,38 @@ var_dump($user);
  *
  */
 
-$users = array(
-    array(
-        "firstname" => "bob",
-        "mail" => "bob@gmail.com",
-        ),
-    array(
-        "firstname" => "john",
-        "mail" => "john@gmail.com",
-        ),
-);
+//$users = array(
+ //   array(
+ //       "firstname" => "bob",
+ //       "mail" => "bob@gmail.com",
+//        ),
+ //   array(
+  //      "firstname" => "john",
+  //      "mail" => "john@gmail.com",
+ //       ),
+//);
 
-$lastname = array("Dit l'ane", "Doe", "Die");
+//$lastname = array("Dit l'ane", "Doe", "Die");
 
-$users = array(
-    array(
-        "firstname" => "bob",
-        "mail" => "bob@gmail.com",
-    ),
-    array(
-        "firstname" => "john",
-        "mail" => "john@gmail.com",
-    ),
-    array(
-        "firstname" => "janne",
-        "mail" => "janne@gmail.com",
-    ),
-);
+//$users = array(
+//    array(
+ //       "firstname" => "bob",
+ //       "mail" => "bob@gmail.com",
+ //   ),
+ //   array(
+  //      "firstname" => "john",
+  //      "mail" => "john@gmail.com",
+ //   ),
+  //  array(
+  //      "firstname" => "janne",
+  //      "mail" => "janne@gmail.com",
+  //  ),
+//);
 
-foreach ($users as $index => $user){
-    $users[$index]["lastname"] = $lastname[$index];
-    var_dump($users);
-}
+//foreach ($users as $index => $user){
+  //  $users[$index]["lastname"] = $lastname[$index];
+  //  var_dump($users);
+//}
 
 //for ($k =0; $k < 3; $k++){
  //   foreach ($users[$k]){
@@ -167,3 +167,44 @@ foreach ($users as $index => $user){
 //    )
 //);
 
+//$person = array(
+//    "firstname" => "john",
+ //   "lastname" => ""
+//);
+
+//function helloArray($user) {
+// var_dump("Hello " . $user["firstname"] . " "  . $user["lastname"]);
+//}
+//helloArray($person);
+/**
+ * Reprendre la fonction helloArray :
+ * - Contrôler que le firtname et lastname sont bien remplis
+ * - Afficher le message "Des champs sont obligatoires (...)"
+ * - Afficher les firstname et lastname avec la première lettre
+ * en majuscule et le reste en minuscule
+ *
+ * firstname => john
+ * firstname => dOE
+ *
+ * => Hello John Doe
+ */
+$user = array(
+    "firstname" => "jOHN",
+    "lastname" => "DoE"
+);
+
+function helloUser($user) {
+//    if(empty($user["fisrtname"]) == false) {
+    if(empty($user["firstname"])) {
+        var_dump("Des champs sont obligatoires (fisrtname)");
+        return;
+    }
+    if(empty($user["lastname"])) {
+        var_dump("Des champs sont obligatoires (lastname)");
+        return;
+    }
+    $user["firstname"] = ucfirst(strtolower($user["firstname"]));
+    $user["lastname"] = ucfirst(strtolower($user["lastname"]));
+    var_dump("Hello " . $user["firstname"] . " "  . $user["lastname"]);
+}
+helloUser($user);
